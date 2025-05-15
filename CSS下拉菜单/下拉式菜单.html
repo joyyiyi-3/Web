@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      .dropbtn {
+        /* 设置按钮样式 */
+        background-color: greenyellow;
+        color: rgb(18, 17, 17);
+        padding: 15px;
+        cursor: pointer; /* 明确指示可交互性 */
+      }
+      .dropdown {
+        position: relative; /*设置定位基准，方便子元素定位*/
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        top: 100%; /*可以使得3个链接紧贴按钮下方*/
+        position: absolute; /*确保3个链接处于父元素下方*/
+        background-color: #f9f9f9;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 15px;
+        text-decoration: none;
+        display: block; /*使链接填满容器，增大链接点击面积*/
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1; /* 悬停在3个小链接上反馈 */
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+        /* 显示出下拉菜单 */
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+
+  <link href="style.css" rel="stylesheet" />
+
+  <body>
+    <h1>Dropdown Menu</h1>
+    <p>Move the mouse over the button to open the dropdown menu.</p>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <!-- button只有小小一块 -->
+
+      <div class="dropdown-content">
+        <a href=""> link1 </a>
+        <a href=""> link2 </a>
+        <a href=""> link3 </a>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- 问题二：按钮嵌套下拉内容的代码问题分析
+原始错误代码
+html
+<button class="dropbtn">
+  Dropdown
+  <div class="dropdown-content">  问题所在 
+    <a href="">link1</a>
+    <a href="">link2</a>
+    <a href="">link3</a>
+  </div>
+</button>
+主要问题
+HTML 规范违反
+
+<button> 的内容模型 (Content Model) 仅允许 phrasing content（文本、<span>、<img> 等）
+
+<div> 属于 flow content，禁止嵌套在按钮内部 
+    -->

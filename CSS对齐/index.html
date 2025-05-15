@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <link href="style.css" rel="stylesheet" />
+
+  <body>
+    <div class="center">文本居中</div>
+    <img src="images/paris.jpg" alt="Paris" style="width: 40%" />
+
+    <h2>通过position实现元素右对齐</h2>
+
+    <p>例子</p>
+    <div class="left">
+      <p>
+        left-In my younger and more vulnerable years my father gave me some
+        advice that I've been turning over in my mind ever since.
+      </p>
+    </div>
+
+    <div class="right">
+      <p>
+        In my younger and more vulnerable years my father gave me some advice
+        that I've been turning over in my mind ever since.
+      </p>
+    </div>
+    <div class="right2">
+      <p>
+        In my younger and more vulnerable years my father gave me some advice
+        that I've been turning over in my mind ever since.
+      </p>
+    </div>
+
+    <h2>Without Clearfix</h2>
+
+    <p>图像向右浮动. 并且图像高于它的父容器,所以图像从父容器中溢出:</p>
+
+    <div>
+      <img
+        class="img1"
+        src="images/pineapple.jpg"
+        alt="Pineapple"
+        width="170"
+        height="170"
+      />
+      hiiii
+    </div>
+
+    <h2 style="clear: right">With N Clearfix</h2>
+    <p>Add the clearfix hack to the containing element, to fix this problem:</p>
+
+    <div class="clearfix">
+      <img
+        class="img2"
+        src="images/pineapple.jpg"
+        alt="Pineapple"
+        width="170"
+        height="170"
+      />
+      hello
+    </div>
+
+    <h2>Center with line-height</h2>
+
+    <p>
+      In this example, we use the line-height property with a value that is
+      equal to the height property to center the div element:
+    </p>
+
+    <div class="center">
+      <p>
+        I am vertically and horizontally centered.I am vertically and
+        horizontally centered.I am vertically and horizontally centered.I am
+        vertically and horizontally centered.I am vertically and horizontally
+        centered.I am vertically and horizontally centered.
+      </p>
+      <p>
+        I am vertically and horizontally centered.I am vertically and
+        horizontally centered.I am vertically and horizontally centered.I am
+        vertically and horizontally centered.I am vertically and horizontally
+        centered.I am vertically and horizontally centered.
+      </p>
+      <p>
+        I am vertically and horizontally centered.I am vertically and
+        horizontally centered.I am vertically and horizontally centered.I am
+        vertically and horizontally centered.I am vertically and horizontally
+        centered.I am vertically and horizontally centered.
+      </p>
+    </div>
+  </body>
+</html>
