@@ -1,0 +1,76 @@
+.center {
+  /*下面实现整个元素的水平居中*/
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  /*下面实现居中对齐文本*/
+  text-align: center;
+}
+/*下面实现图片居中*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*下面实现元素左/右对齐-定位*/
+.left {
+  position: relative;
+  left: 0px;
+  width: 300px;
+  border: 3px solid red;
+  padding: 10px;
+}
+
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73ad21;
+  padding: 10px;
+}
+/*下面实现元素左/右对齐-浮动*/
+
+.right2 {
+  float: right;
+  width: 300px;
+  border: 3px solid #e8c27c;
+  padding: 10px;
+  margin-right: 326px; /*这个大小是算出来的 为绝对定位元素预留宽度 */
+  margin-top: 125px;
+}
+h2 {
+  margin-top: 300px;
+}
+
+/* div {
+  border: 3px solid blue;
+  padding: 5px;
+} */
+
+.img1 {
+  float: right;
+}
+
+.img2 {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* 
+.center {
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid green;
+  text-align: center;
+} */
+
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}

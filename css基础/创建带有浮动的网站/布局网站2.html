@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      .header,
+      .footer {
+        background-color: grey;
+        color: white;
+        padding: 15px;
+      }
+      .column {
+        float: left;
+      }
+      .clearfit::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      .menu {
+        width: 25%;
+      }
+      .content {
+        width: 75%;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        background-color: #33b5e5;
+        color: white;
+        margin: 10px;
+        padding: 10px;
+      }
+      li:hover {
+        background-color: #0099cc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Chania</h1>
+    </div>
+    <div class="clearfit">
+      <div class="column menu">
+        <ul>
+          <li href="" class="Flight">The Flight</li>
+          <li href="" class="City">The City</li>
+          <li href="" class="Island">The Island</li>
+          <li href="" class="Food">The Food</li>
+        </ul>
+      </div>
+
+      <div class="column content">
+        <h1>The City</h1>
+        <p>chania is</p>
+        <p>you'll</p>
+      </div>
+    </div>
+    <div class="footer">Footer Text</div>
+  </body>
+</html>

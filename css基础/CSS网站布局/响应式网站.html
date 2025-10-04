@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial;
+        padding: 10px;
+        margin: 0;
+        background: #f1f1f1;
+      }
+      .header {
+        padding: 30px;
+        background-color: white;
+        text-align: center;
+      }
+      .topnav {
+        background-color: #333;
+      }
+      .topnav::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      .topnav a {
+        float: left;
+        padding: 10px;
+        margin: 0;
+        color: white;
+        display: block;
+        text-decoration: none;
+      }
+
+      .leftcolumn {
+        float: left;
+        width: 75%;
+      }
+      .rightcolumn {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+      }
+      .row::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      .card {
+        background-color: white;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>My Website</h1>
+      <p>Resize the browser window to see the effect.</p>
+    </div>
+
+    <div class="topnav">
+      <a href="">Link1</a>
+      <a href="">Link2</a>
+      <a href="">Link3</a>
+      <a href="" style="float: right">Link4</a>
+    </div>
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h1>标题</h1>
+          <h5>标题描述</h5>
+          <div class="fakeimg" style="height: 200px">Image</div>
+          <p>一些文字..</p>
+          <p>
+            必须承认，我们的罪责是，我们必须在劳动中团结起来，并在时间上给予我们最大的帮助。
+            Ut enim ad minim veniam，quis nostrud 练习 ullamco
+          </p>
+        </div>
+        <div class="card">
+          <h1>标题</h1>
+          <h5>标题描述</h5>
+          <div class="fakeimg" style="height: 200px">Image</div>
+
+          <p>一些文字..</p>
+          <p>
+            必须承认，我们的罪责是，我们必须在劳动中团结起来，并在时间上给予我们最大的帮助。
+            Ut enim ad minim veniam，quis nostrud 练习 ullamco
+          </p>
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h1>关于我</h1>
+          <div class="fakeimg" style="height: 100px">Image</div>
+
+          <p>一些关于我的文字在 culpa qui officia deserunt mollit anim..</p>
+        </div>
+        <div class="card">
+          <h1>热门帖子</h1>
+          <div class="fakeimg">Image</div>
+          <div class="fakeimg">Image</div>
+          <div class="fakeimg">Image</div>
+        </div>
+        <div class="card">
+          <h1>跟我来</h1>
+          <p>一些文字</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">footer</div>
+  </body>
+</html>

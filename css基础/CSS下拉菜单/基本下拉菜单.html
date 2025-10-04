@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <link href="style.css" rel="stylesheet" />
+
+  <body>
+    <h1>Hoverable Dropdown</h1>
+    <p>Move the mouse over the text below to open the dropdown content.</p>
+
+    <div class="dropdown">
+      <button>Mouse over me</button>
+      <div class="dropdown-content">
+        <p>Hello World!</p>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- 
+     HTML）使用任何元素打开下拉内容，例如 <span> 或 <button> 元素。
+    使用容器元素（如 <div>）来创建下拉内容并在其中添加任何您想要的内容。
+
+    使用 <div> 元素包裹元素，以便使用 CSS 正确定位下拉内容。
+    CSS）该类.dropdown使用position:relative，当我们希望下拉内容放置在下拉按钮的正下方时，这是必需的（使用position:absolute）。
+    该类.dropdown-content保存实际的下拉菜单内容。默认情况下，它处于隐藏状态，鼠标悬停时会显示（见下文）。请注意，其宽度min-width设置为 160px。您可以随意更改。提示：如果您希望下拉菜单内容的宽度与下拉按钮的宽度相同，请将 设置width为 100%（并overflow:auto在小屏幕上启用滚动功能）
+    当用户将鼠标移到下拉按钮上时，选择器:hover用于显示下拉菜单。
+   
+    -->

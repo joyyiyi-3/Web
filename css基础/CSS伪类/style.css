@@ -1,0 +1,16 @@
+/*下面是类选择器+伪类*/
+.highlight:hover {
+  color: #ff0000;
+  font-size: 22px;
+}
+/*下面是元素选择器+伪类*/
+div {
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+div:hover {
+  background-color: blue;
+}
