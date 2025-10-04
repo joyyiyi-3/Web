@@ -1,0 +1,233 @@
+:root {
+  --jd-red: #e33333;
+  --jd-dark-red: #c91623;
+  --text-color: #666;
+  --light-gray: #f0f0f0;
+  --border-color: #e0e0e0;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+body {
+  color: var(--text-color);
+  background-color: #f0f0f0;
+  min-width: 1200px; /*当浏览器窗口宽度小于1200px时，会出现水平滚动条*/
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  padding: 10px;
+}
+.location {
+  color: var(--jd-red);
+}
+.top-nav-left a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.top-nav-left a:hover {
+  color: var(--jd-red);
+}
+.top-right-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 5px;
+}
+.top-right-links a:hover {
+  color: var(--jd-red);
+}
+
+.main-nav {
+  background-color: white;
+  display: flex;
+  padding: 10px 0;
+  margin: 0 10px;
+  height: 100px;
+  align-items: center; /*把子元素都垂直居中*/
+}
+.logo {
+  background-color: var(--jd-red);
+  width: 190px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.search {
+  flex: 1;
+  display: flex;
+  height: 40px;
+}
+.search-input {
+  flex: 1; /*搜索框自然扩展*/
+  border: 2px solid var(--jd-red);
+  padding: 0 10px;
+  font-size: var(--font-size-md);
+}
+.search-button {
+  width: 80px;
+  background-color: var(--jd-red);
+  color: white;
+  border: none;
+  margin-right: 20px;
+  font-size: var(--font-size-lg);
+}
+
+.main-right {
+  display: flex;
+  gap: 10px;
+  font-size: var(--font-size-lg);
+}
+.nav-item,
+.nav-cart {
+  padding: 0 15px;
+  text-align: center; /*文本多行居中*/
+}
+/* 分类导航 */
+.category-nav {
+  background-color: var(--jd-red);
+  margin: 0 10px;
+  display: flex;
+  color: white;
+  text-align: center;
+}
+.all-category {
+  padding: 10px;
+  width: 190px;
+  text-align: center;
+  background-color: var(--jd-dark-red);
+}
+.other-category {
+  display: flex;
+}
+.category-item {
+  padding: 10px;
+}
+.content-container {
+  display: flex;
+
+  margin: 10px;
+}
+
+/* 侧边栏 */
+.sidebar {
+  background-color: white;
+  width: 190px;
+  padding: 10px 0;
+  margin-right: 10px;
+}
+.sidebar-category {
+  padding: 10px;
+  border-bottom: 1px dashed var(--text-color);
+}
+.sidebar-category:last-child {
+  border-bottom: none;
+}
+
+.main-content {
+  flex: 1;
+}
+.banner {
+  display: flex;
+  margin-bottom: 10px;
+}
+.main-banner {
+  height: 340px;
+  background-color: var(--jd-red);
+  flex: 1;
+  margin-right: 10px;
+}
+.user-panel {
+  width: 190px;
+  padding: 20px 0;
+  text-align: center;
+  background-color: white;
+}
+.user-greeting {
+  margin-bottom: 15px;
+}
+.login {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--jd-red);
+  color: white;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+.user-benefits {
+  display: flex;
+  justify-content: space-around;
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+.money {
+  background-color: #fff0e9;
+  color: var(--jd-red);
+}
+
+.seckill {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.jd-seckill {
+  color: var(--jd-red);
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+.seckill-time {
+  padding: 3px;
+  color: white;
+  background-color: var(--text-color);
+}
+.more {
+  font-size: var(--font-size-md);
+}
+/* 商品 */
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.product-card {
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.original-price {
+  font-size: var(--font-size-sm);
+  color: #999;
+  text-decoration: line-through;
+}
+.product-price {
+  color: var(--jd-red);
+  font-weight: bold;
+  margin: 5px 0;
+}
+.seckill-price {
+  font-size: var(--font-size-sm);
+  background-color: #fff0e9;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 15px;
+  padding-left: 15px;
+  border-left: 4px solid var(--jd-dark-red);
+}

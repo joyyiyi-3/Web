@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS定位：relative与absolute</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+      }
+
+      .description {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      .comparison-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .example {
+        flex: 1;
+        min-width: 300px;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .example h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #eee;
+      }
+
+      .box {
+        height: 200px;
+        border: 2px dashed #3498db;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .target {
+        width: 100px;
+        height: 60px;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .relative-container {
+        position: relative;
+      }
+
+      .explanation {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+      }
+
+      .explanation h2 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      .explanation p {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      .code-block {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: "Courier New", monospace;
+        margin: 20px 0;
+        overflow-x: auto;
+      }
+
+      .toggle-container {
+        display: flex;
+        gap: 15px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      .toggle-btn {
+        padding: 12px 25px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: #2980b9;
+      }
+
+      .active {
+        background: #2c3e50;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .comparison-section {
+          flex-direction: column;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CSS定位：relative与absolute</h1>
+        <p class="description">理解为什么absolute定位需要relative容器</p>
+      </header>
+
+      <div class="explanation">
+        <h2>position: relative 和 position: absolute 的关系</h2>
+        <p>
+          当一个元素设置为<code>position: absolute</code
+          >时，它会相对于<strong>最近的非static定位祖先元素</strong>进行定位。
+        </p>
+        <p>
+          如果不存在这样的祖先元素，它将相对于<strong>初始包含块（通常是视口）</strong>进行定位。
+        </p>
+        <p>
+          这就是为什么我们经常给父容器添加<code>position: relative</code> -
+          它创建一个定位上下文，让absolute子元素相对于它定位，而不是相对于视口。
+        </p>
+
+        <div class="code-block">
+          /* 没有relative容器 - absolute元素相对于视口定位 */<br />
+          .container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;/* 没有position属性，默认为static */<br />
+          }<br />
+          <br />
+          .target {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;right: 0;<br />
+          }<br />
+          <br />
+          /* 有relative容器 - absolute元素相对于容器定位 */<br />
+          .container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: relative; /* 创建定位上下文 */<br />
+          }<br />
+          <br />
+          .target {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;right: 0;<br />
+          }
+        </div>
+      </div>
+
+      <div class="toggle-container">
+        <button class="toggle-btn active" onclick="showBothExamples()">
+          显示两种示例
+        </button>
+        <button class="toggle-btn" onclick="showWithoutRelative()">
+          仅显示无relative容器
+        </button>
+        <button class="toggle-btn" onclick="showWithRelative()">
+          仅显示有relative容器
+        </button>
+      </div>
+
+      <div class="comparison-section">
+        <div class="example">
+          <h2>无 relative 容器</h2>
+          <div class="box">
+            <div class="target absolute">absolute元素</div>
+            <p>这个容器没有设置position: relative</p>
+          </div>
+          <p>
+            absolute元素相对于视口定位，而不是相对于容器。注意它位于浏览器窗口的右上角。
+          </p>
+        </div>
+
+        <div class="example">
+          <h2>有 relative 容器</h2>
+          <div class="box relative-container">
+            <div class="target absolute">absolute元素</div>
+            <p>这个容器设置了position: relative</p>
+          </div>
+          <p>absolute元素现在相对于容器定位。注意它位于容器的右上角。</p>
+        </div>
+      </div>
+
+      <div class="explanation">
+        <h2>实际应用场景</h2>
+        <p>这种技术常用于：</p>
+        <ul>
+          <li>创建重叠元素或自定义布局</li>
+          <li>在容器内精确放置图标或装饰元素</li>
+          <li>创建自定义表单控件或UI组件</li>
+          <li>实现卡片式设计中的标签或徽章</li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>CSS定位示例 &copy; 2023 - 演示relative和absolute定位的关系</p>
+      </footer>
+    </div>
+
+    <script>
+      function showBothExamples() {
+        document.querySelectorAll(".example").forEach((example) => {
+          example.style.display = "block";
+        });
+        setActiveButton(0);
+      }
+
+      function showWithoutRelative() {
+        document.querySelectorAll(".example")[0].style.display = "block";
+        document.querySelectorAll(".example")[1].style.display = "none";
+        setActiveButton(1);
+      }
+
+      function showWithRelative() {
+        document.querySelectorAll(".example")[0].style.display = "none";
+        document.querySelectorAll(".example")[1].style.display = "block";
+        setActiveButton(2);
+      }
+
+      function setActiveButton(index) {
+        document.querySelectorAll(".toggle-btn").forEach((btn, i) => {
+          if (i === index) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
