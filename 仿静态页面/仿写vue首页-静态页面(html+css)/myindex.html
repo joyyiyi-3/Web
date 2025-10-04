@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>我的测试页面</title>
+    <link href="myindex.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <div class="left">
+          <div class="logo"><span class="vue-icon">V</span>Vue.js</div>
+
+          <div class="search">
+            <input type="text" placeholder="搜索 CTRL K" />
+          </div>
+        </div>
+
+        <div class="right">
+          <a href="#">文档</a>
+          <a href="#">API</a>
+          <a href="#">演练场</a>
+          <a href="#">生态系统</a>
+          <a href="#">关于</a>
+          <a href="#">赞助</a>
+          <a href="#">专家</a>
+          <a href="#">语言</a>
+          <a href="#">***</a>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="aside">
+          <div class="api-style">
+            <h5>API 风格偏好</h5>
+            <label class="toggle-label">
+              <span>选项式</span>
+              <span class="toggle-switch"></span>
+
+              <span>组合式</span>
+            </label>
+          </div>
+          <div class="sidebar-nav">
+            <h3>开始</h3>
+            <ul>
+              <li><a href="#">简介</a></li>
+              <li><a href="#">快速上手</a></li>
+            </ul>
+            <h3>基础</h3>
+            <ul>
+              <li><a href="#">创建一个应用</a></li>
+              <li><a href="#">模板语法</a></li>
+              <li class="active"><a href="#">响应式基础</a></li>
+              <li><a href="#">计算属性</a></li>
+              <li><a href="#">类与样式绑定</a></li>
+              <li><a href="#">条件渲染</a></li>
+              <li><a href="#">列表渲染</a></li>
+              <li><a href="#">事件处理</a></li>
+              <li><a href="#">表单输入绑定</a></li>
+              <li><a href="#">侦听器</a></li>
+              <li><a href="#">模板引用</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+          <div class="tips-card">
+            <h4>API参考</h4>
+            <p>
+              本页和后面很多页面中都分别包含了选项式 API 和组合式 API
+              的示例代码。现在你选择的是 <span class="selected">组合式</span>
+              API。你可以使用左侧侧边栏顶部的“API 风格偏好”开关在 API
+              风格之间切换。
+            </p>
+          </div>
+          <h1>响应式基础</h1>
+          <h3>声明响应式状态</h3>
+          <p><code>ref()</code></p>
+          <p>在组合式 API 中，推荐使用 ref() 函数来声明响应式状态：</p>
+          <pre>
+<code>import { ref } from 'vue'</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
